@@ -10,6 +10,7 @@ export class CreateComponentComponent implements AfterViewInit {
   private viewContainerRef = inject(ViewContainerRef);
 
   ngAfterViewInit(): void {
-    this.viewContainerRef.createComponent(TestComponent)
+    const testComponent = this.viewContainerRef.createComponent(TestComponent);
+    testComponent.instance.name = 'andyb';
   }
 }
