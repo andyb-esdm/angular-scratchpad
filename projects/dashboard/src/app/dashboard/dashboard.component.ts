@@ -1,10 +1,12 @@
-import { AfterViewInit, ChangeDetectorRef, Component, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, QueryList, ViewChildren, inject } from '@angular/core';
 import { Track } from '../models/track';
 import { DashboardOutletDirective } from '../dashboard-outlet.directive';
 import { DashboardCards } from '../dashboard-cards.enum';
 import { dashboardCards } from '../dashboard-cards';
 import { DashboardCardContainerComponent } from '../dashboard-card-container/dashboard-card-container.component';
 import { Item } from '../models/item';
+import { DashboardService } from '../dashboard.service';
+import { tap } from 'rxjs';
 
 // https://itnext.io/build-an-enterprise-scalable-dashboard-using-angular-155aa4280a74
 
@@ -13,45 +15,21 @@ import { Item } from '../models/item';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements AfterViewInit, OnInit {
   @ViewChildren(DashboardOutletDirective) dashboardOutlet?: QueryList<DashboardOutletDirective>;
 
-  tracks: Array<Track> = [
-    {
-      items: [
-        {
-          component: DashboardCards.HELLO_WORLD,
-          id: 'hello-world'
-        }
-      ],
-    },
-    {
-      items: [
-        {
-          component: DashboardCards.HELLO_WORLD,
-          id: 'hello-world'
-        }
-      ]
-    },
-    {
-      items: [
-        {
-          component: DashboardCards.HELLO_WORLD,
-          id: 'hello-world'
-        }
-      ]
-    },
-    {
-      items: [
-        {
-          component: DashboardCards.HELLO_WORLD,
-          id: 'hello-world'
-        }
-      ]
-    }
-  ];
+  private dashboardService = inject(DashboardService);
+
+  tracks!: Track[];
 
   constructor(private cd: ChangeDetectorRef) { }
+
+  ngOnInit(): void {
+    this.dashboardService.tracks$
+      .pipe(
+        tap(tracks => this.tracks = tracks)
+      ).subscribe();
+  }
 
   ngAfterViewInit(): void {
     this.loadContents();
