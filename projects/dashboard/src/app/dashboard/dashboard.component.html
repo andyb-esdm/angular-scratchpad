@@ -1,4 +1,4 @@
-<div class="board">
+<div class="grid grid-cols-3 gap-4">
     <div *ngFor="let track of tracks">
         <div *ngFor="let item of track.items">
             <ng-template appDashboardOutlet [item]="item"></ng-template>

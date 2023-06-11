@@ -32,6 +32,22 @@ export class DashboardComponent implements AfterViewInit {
           id: 'hello-world'
         }
       ]
+    },
+    {
+      items: [
+        {
+          component: DashboardCards.HELLO_WORLD,
+          id: 'hello-world'
+        }
+      ]
+    },
+    {
+      items: [
+        {
+          component: DashboardCards.HELLO_WORLD,
+          id: 'hello-world'
+        }
+      ]
     }
   ];
 
