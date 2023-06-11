@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hello-world',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./hello-world.component.css']
 })
 export class HelloWorldComponent {
-
+  @Input() name = '';
 }

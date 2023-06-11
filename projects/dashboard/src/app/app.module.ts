@@ -8,6 +8,7 @@ import { DashboardOutletDirective } from './dashboard-outlet.directive';
 import { DashboardCardContainerComponent } from './dashboard-card-container/dashboard-card-container.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { HelloWorldContainerComponent } from './hello-world-container/hello-world-container.component';
+import { HelloWorldContainerTwoComponent } from './hello-world-container-two/hello-world-container-two.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HelloWorldContainerComponent } from './hello-world-container/hello-worl
     DashboardOutletDirective,
     DashboardCardContainerComponent,
     HelloWorldComponent,
-    HelloWorldContainerComponent
+    HelloWorldContainerComponent,
+    HelloWorldContainerTwoComponent
   ],
   imports: [
     BrowserModule,

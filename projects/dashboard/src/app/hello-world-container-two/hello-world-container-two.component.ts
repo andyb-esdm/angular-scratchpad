@@ -3,15 +3,15 @@ import { DashboardCardContainerComponent } from '../dashboard-card-container/das
 import { HelloWorldService } from '../hello-world.service';
 
 @Component({
-  selector: 'app-hello-world-container',
-  templateUrl: './hello-world-container.component.html',
-  styleUrls: ['./hello-world-container.component.css']
+  selector: 'app-hello-world-container-two',
+  templateUrl: './hello-world-container-two.component.html',
+  styleUrls: ['./hello-world-container-two.component.css']
 })
-export class HelloWorldContainerComponent extends DashboardCardContainerComponent {
+export class HelloWorldContainerTwoComponent extends DashboardCardContainerComponent {
   private helloWorldService = inject(HelloWorldService);
   name = '';
   constructor() {
     super();
-    this.name = this.helloWorldService.names[0];
+    this.name = this.helloWorldService.names[1];
   }
 }
