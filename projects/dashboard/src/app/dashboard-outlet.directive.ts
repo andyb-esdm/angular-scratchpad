@@ -1,4 +1,4 @@
-import { Directive, Input, ViewContainerRef } from '@angular/core';
+import { Directive, Input, ViewContainerRef, inject } from '@angular/core';
 import { Item } from './models/item';
 
 @Directive({
@@ -7,6 +7,5 @@ import { Item } from './models/item';
 export class DashboardOutletDirective {
   @Input() item!: Item;
 
-  constructor(public viewContainerRef: ViewContainerRef) { }
-
+  viewContainerRef = inject(ViewContainerRef);
 }

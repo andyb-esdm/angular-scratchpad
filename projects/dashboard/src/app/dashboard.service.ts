@@ -14,6 +14,10 @@ export class DashboardService {
         {
           component: DashboardCards.HELLO_WORLD,
           id: 'hello-world'
+        },
+        {
+          component: DashboardCards.HELLO_WORLD_TWO,
+          id: 'hello-world'
         }
       ],
     },
@@ -52,4 +56,8 @@ export class DashboardService {
     state[0].items.length < state[1].items.length ? state[0].items.push(item) : state[1].items.push(item);
     this.subject.next(state);
   }
+
+  setState = (tracks: Array<Track>) => {
+    this.subject.next(tracks);
+  };
 }

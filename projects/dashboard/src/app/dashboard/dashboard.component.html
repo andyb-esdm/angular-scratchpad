@@ -1,6 +1,7 @@
-<div class="dashboard">
-    <div *ngFor="let track of tracks">
-        <div *ngFor="let item of track.items">
+<div class="dashboard" cdkDropListGroup>
+    <div *ngFor="let track of tracks; let t = index" [cdkDropListData]="track.items" cdkDropList class="track"
+        (cdkDropListDropped)="onDrop($event, t)">
+        <div *ngFor="let item of track.items; let i = index" cdkDrag class="item">
             <ng-template appDashboardOutlet [item]="item"></ng-template>
         </div>
     </div>
