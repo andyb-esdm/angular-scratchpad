@@ -57,7 +57,7 @@ export class DashboardComponent implements AfterViewInit, OnInit, OnDestroy {
     this.dashboardService.setState(this.tracks);
   }
 
-  loadContents = () => {
+  private loadContents = () => {
     if (!this.dashboardOutlet || !this.dashboardOutlet.length) {
       return;
     }
@@ -70,7 +70,7 @@ export class DashboardComponent implements AfterViewInit, OnInit, OnDestroy {
     this.cd.detectChanges();
   }
 
-  loadContent = (template: DashboardOutletDirective, item: Item) => {
+  private loadContent = (template: DashboardOutletDirective, item: Item) => {
     if (!item.component) {
       return;
     }
