@@ -28,6 +28,14 @@ export class DashboardService {
           id: 'hello-world'
         }
       ]
+    },
+    {
+      items: [
+        {
+          component: DashboardCards.LIST,
+          id: 'user-list'
+        }
+      ]
     }
   ];
 

@@ -1,0 +1,6 @@
+<h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Users:</h2>
+<ul class="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
+    <li *ngFor="let user of users">
+        {{ user.name }} ({{ user.email }})
+    </li>
+</ul>
