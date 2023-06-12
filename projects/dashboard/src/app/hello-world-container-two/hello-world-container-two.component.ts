@@ -10,8 +10,10 @@ import { HelloWorldService } from '../hello-world.service';
 export class HelloWorldContainerTwoComponent extends DashboardCardContainerComponent {
   private helloWorldService = inject(HelloWorldService);
   name = '';
+  prompt = '';
   constructor() {
     super();
     this.name = this.helloWorldService.names[1];
+    this.prompt = this.helloWorldService.getPrompt();
   }
 }
