@@ -78,7 +78,8 @@ export class DashboardComponent implements AfterViewInit, OnInit, OnDestroy {
     const viewContainerRef = template.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(dashboardCards[item.component]);
-    const instance = componentRef.instance as DashboardCardContainerComponent;
-    instance.item = item;
+    componentRef.setInput('item', item);
+    // const instance = componentRef.instance as DashboardCardContainerComponent;
+    // instance.item = item;
   }
 }
