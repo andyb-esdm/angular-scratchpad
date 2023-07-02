@@ -2,9 +2,8 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, QueryLi
 import { Track } from '../models/track';
 import { DashboardOutletDirective } from '../dashboard-outlet.directive';
 import { dashboardCards } from '../dashboard-cards';
-import { DashboardCardContainerComponent } from '../dashboard-card-container/dashboard-card-container.component';
 import { Item } from '../models/item';
-import { DashboardService } from '../dashboard.service';
+import { DashboardService } from '../services/dashboard.service';
 import { Subscription, tap } from 'rxjs';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 

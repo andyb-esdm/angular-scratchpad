@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Track } from './models/track';
-import { DashboardCards } from './dashboard-cards.enum';
+import { Track } from '../models/track';
+import { DashboardCards } from '../dashboard-cards.enum';
 import { BehaviorSubject } from 'rxjs';
-import { Item } from './models/item';
+import { Item } from '../models/item';
 
 @Injectable({
   providedIn: 'root'
