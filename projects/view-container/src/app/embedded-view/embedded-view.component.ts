@@ -14,7 +14,7 @@ export class EmbeddedViewComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (this.templateRef) {
       const context = { $implicit: 'Andy', age: 54 }
-      let viewRef = this.viewContainerRef.createEmbeddedView(this.templateRef, context);
+      const viewRef = this.viewContainerRef.createEmbeddedView(this.templateRef, context);
       this.viewContainerRef.insert(viewRef);
     } else {
       console.warn('No templateRef');
